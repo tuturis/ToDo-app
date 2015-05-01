@@ -1,4 +1,9 @@
-jQuery(function($) {
+$(document).ready(function(){
+    // bind event handlers when the page loads.
+    bindEvents();
+});
+
+function bindEvents() {
     $(".create-todo").on('click', function(event){
         event.preventDefault();
          $todo    = $(this),
@@ -17,6 +22,7 @@ jQuery(function($) {
                    $.post("todos", null,
                         function(data) {               
                         $('.todos').html($('.todos', data));
+                        bindEvents();
                       });
                 } else {
                     // print error message
@@ -86,7 +92,7 @@ jQuery(function($) {
         }, 'json');
 
     });
-});
+}
 
 /*! version : 4.7.14
  =========================================================
