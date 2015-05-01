@@ -1,0 +1,61 @@
+<center><h1>Todo List</h1></center>
+<div class="content">
+ <div class="header">
+      <form class="" action="">  
+        <div class="row">
+          <div class="input-group">   
+          <input type="text" class="todo-input" placeholder="Add todo here!"/>            
+          <span class="input-group-addon">
+            <button type="submit" class="glyphicon glyphicon-plus input-group-btn create-todo"></button>
+          </span>
+          </div>
+        </div>
+        <div class="row">
+          <div class='input-group date' id='dtp'>
+              <input type='text' placeholder="Due.." />
+              <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-calendar"></span>
+              </span>
+            </div>
+         </div>         
+      </form> 
+ </div>          
+ <div class="todos">
+    <?php foreach($todos as $todo):?>
+    <div class="todoItem <?php if ($todo->getCompleted() == 1) {  echo 'done';  } ?>">
+       <span  id="todo-<?php echo $todo->getId() ?>" class="todo" contenteditable="true"><?php echo $todo->getTodo()?></span>
+        <button  id="remove-<?php echo $todo->getId(); ?>"class="delete-todo">
+          <span class="entypo-cancel"></span>
+        </button>
+        <button >
+          <span class="entypo-check"></span>
+        </button>
+    </div>
+    <?php endforeach; ?>
+</div>
+<div class="clear-both"></div> 
+</div>
+<?php /*<div ng-app="todo" ng-controller="toDoCtrl">
+  <div class="content">
+    <div class="header">
+      <form action="">
+     
+        <button type="submit" ng-click="getTodos()">
+          <span class="entypo-list-add"></span>
+        </button>
+      <input type="text" ng-model="todoFld" placeholder="Add todo here!"/>
+      </form>      
+    </div>    
+    <div class="todoItem" ng-repeat="todo in todos">
+      <li>
+      <span class="{{todo.done}}{{todo.id}}" contenteditable="true">{{todo.todo}}</span>
+      <button  ng-click="removeTodo(todo.id)">
+        <span class="entypo-cancel"></span>
+      </button>
+      <button ng-click="doneTodo($index)">
+        <span class="entypo-check"></span>
+      </button>
+      </li>
+    </ul>
+  </div>*/
+  ?>
