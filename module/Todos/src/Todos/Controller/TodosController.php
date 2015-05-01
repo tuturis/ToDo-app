@@ -34,9 +34,20 @@ class TodosController extends AbstractActionController {
     $response = $this->getResponse();
 	if ($request->isPost()) {
         $post_data = $request->getPost();
-        $todo_content = $post_data['content'];
         $new_todo = new \Todos\Model\Entity\Todo();
-        $new_todo->setTodo($todo_content);		
+        if (isset($post_data['content']) || !empty($post_data['content'])) {
+            $todo_content = $post_data['content'];
+            $new_todo->setTodo($todo_content);
+        } 
+        if (isset($post_data['deadline']) || !empty($post_data['deadline'])) {
+            $todo_deadline = $post_data['deadline'];
+            $new_todo->setDeadline($todo_deadline);
+        }
+   		if (isset($post_data['priority']) || !empty($post_data['priority'])) {
+            $todo_priority = $post_data['priority'];
+            $new_todo->setPriority($todo_priority);
+        }
+
         if (!$todo_id = $this->getTodosTable()->saveTodo($new_todo)) {
            /* $json = new JsonModel(array('data' => false)); */
             $response->setContent(\Zend\Json\Json::encode(array('response' => false)));
