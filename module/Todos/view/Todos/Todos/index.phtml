@@ -33,8 +33,10 @@
  </div>          
  <div class="todos">
     <?php foreach($todos as $todo):?>
-    <div class="todoItem <?php if ($todo->getCompleted() == 1) {  echo 'done';  } ?>">
+    <div class="row todoItem <?php if ($todo->getCompleted() == 1) {  echo 'done';  } ?>">
        <span  id="todo-<?php echo $todo->getId() ?>" class="todo" contenteditable="true"><?php echo $todo->getTodo()?></span>
+       <span class="deadline pull-right"><?php echo $todo->getDeadline()?></span>
+       <span class="priority pull-right"><?php echo $todo->getPriority()?></span>
         <button  id="remove-<?php echo $todo->getId(); ?>"class="delete-todo">
           <span class="entypo-cancel"></span>
         </button>

@@ -4,19 +4,20 @@ jQuery(function($) {
          $todo    = $(this),
          content  = $('.todo-input').val(),
          deadline = $('.due').val(),
-         deadline = moment(deadline, "DD-MM-YYY HH:mm").format("YYYY-MM-DD HH:MM:SS");
          priority = $('.priority').val();
-
+         deadline = moment(deadline, "DD-MM-YYYY HH:mm").format("YYYY-MM-DD HH:MM");
+         if (deadline == "Invalid date") {
+            deadline = null;
+         }
 
         if(content.length !== 0) {
         $.post("todos/add", {content: content, deadline: deadline, priority: priority},
             function(data){
                 if(data.response === true){
-                    $('.todos').append("<div class=\"todoItem\"><span class=\"todo\" id=\"todo-" + data.new_todo_id + "\" contenteditable=\"true\">" + content +"</span><button id=\"remove-"+data.new_todo_id+"\"class=\"delete-todo\"></button><button><span class=\"entypo-check\"></span></button></div>");
-                    $('.todo-input').val("");
-                    $('.deadline').text("");
-                    
-                // print success message
+                   $.post("todos", null,
+                        function(data) {               
+                        $('.todos').html($('.todos', data));
+                      });
                 } else {
                     // print error message
                     console.log('could not add');
