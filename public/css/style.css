@@ -66,14 +66,15 @@ li {
   transition:all 1s;
 }
 .todo {
-    width: 100%;
-    max-width: 100%;
+  word-wrap: break-word;
+  width: 100%;
+  max-width: 100%;
 }
 .done {
   text-decoration:line-through;
 }
 
-input {
+input, textarea {
   padding-left: 35px;
   background: transparent;
   border:none;
@@ -82,7 +83,7 @@ input {
   width: 100%;
 }
 
-input:focus {
+input:focus, textarea:focus {
   	outline-color: transparent;
 }
 

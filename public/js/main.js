@@ -42,7 +42,7 @@ function bindEvents() {
             console.log('could not add');
         } 
     });
-    $('.todoItem').on('click', 'button .entypo-check', function(event){
+    $('.todoItem').on('click', 'button.check-todo', function(event){
         event.preventDefault();
         var $todo     = $(this).parent().parent(),
         update_id     = $todo.children('.todo').attr('id');
@@ -80,7 +80,7 @@ function bindEvents() {
         },
         function(data){
             if(data.response == true) {
-                $todo.parent().remove();
+                $todo.parent().parent().remove();
             } else {
                 console.log('could not remove ');
             }
@@ -89,21 +89,34 @@ function bindEvents() {
 
     $('.todos').on('keyup', '.todo', function(event){
         var $todo      = $(this),
-        update_id  = $todo.attr('id'),
-        update_content = $todo.text();
-        
+        update_id      = $todo.attr('id'),
+        update_content = $todo.text()
         update_id = update_id.replace("todo-","");
-     
         $.post("todos/update", {id: update_id, content: update_content},
             function(data){
             if(data.response == false){
                 console.log('could not update' + data);
             }
         }, 'json');
-
+    });
+    $('.todos .row').on('keyup', '.deadline', function(event){
+        var $todo      = $(this),
+        update_id      = $todo.attr('id'),
+        deadline = $todo.text(),
+        update_id = update_id.replace("deadline-","");
+        if (moment(deadline).isValid()) {
+        $.post("todos/update", {id: update_id, deadline: deadline},
+            function(data){
+            if(data.response == false){
+                console.log('could not update' + data);
+            }
+        }, 'json');
+        } else {
+           
+            console.log("invalid time")
+        }
     });
 }
-
 /*! version : 4.7.14
  =========================================================
  bootstrap-datetimejs

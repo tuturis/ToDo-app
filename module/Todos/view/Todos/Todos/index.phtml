@@ -3,7 +3,7 @@
  <div class="header"> 
         <div class="row">
           <div class="input-group">   
-          <input type="text" class="todo-input" placeholder="Add todo here!"/>            
+          <textarea  type="text" class="todo-input" placeholder="Add todo here!"></textarea >            
           <span class="input-group-addon">
             <button type="submit" class="glyphicon glyphicon-plus input-group-btn create-todo"></button>
           </span>
@@ -42,11 +42,11 @@
           <span class="entypo-cancel"></span>
         </button>
        <?php if ($todo->getDeadline() !== "0000-00-00 00:00:00" ) { ?>
-         <span  contenteditable="true" id="pickers" class="deadline label label-default pull-right"><?php echo substr($todo->getDeadline(), 0, -3); ?></span>
+         <span contenteditable="true" id="deadline-<?php echo $todo->getId() ?>" class="deadline  label label-default pull-right"><?php echo substr($todo->getDeadline(), 0, -3); ?></span>
        <?php } ?> 
         
        <span class="label label-default priority priority-<?php echo $todo->getPriority()?> pull-right">Priority: <?php echo $todo->getPriority()?></span>       
-        <button >
+        <button class="check-todo">
           <span class="entypo-check"></span>
         </button>
         </div>

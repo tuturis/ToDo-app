@@ -88,9 +88,13 @@ class TodosController extends AbstractActionController {
                 $todo_content = $post_data['content'];
                 $todo->setTodo($todo_content);
            } 
-           if (isset($post_data['completed']) || !empty($post_data['todo_completed'])) {
+           if (isset($post_data['completed']) || !empty($post_data['completed'])) {
                 $todo_completed = $post_data['completed'];
                 $todo->setCompleted($todo_completed);
+           }
+           if (isset($post_data['deadline']) || !empty($post_data['deadline'])) {
+                $todo_deadline = $post_data['deadline'];
+                $todo->setDeadline($todo_deadline);
            }
             if (!$this->getTodosTable()->saveTodo($todo)) {
                 $response->setContent(\Zend\Json\Json::encode(array('response' => false, '$post_data' => json_encode(var_dump($post_data)))));
