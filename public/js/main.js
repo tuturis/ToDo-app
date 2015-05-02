@@ -5,9 +5,12 @@ $(document).ready(function(){
 
 function bindEvents() {
     $(function () {
-                $('#dtp').datetimepicker(
-                  {format : 'DD/MM/YYYY HH:mm'});
-                $('.selectpicker').selectpicker();
+        $('#dtp').datetimepicker({format : 'DD/MM/YYYY HH:mm'});
+        $('.selectpicker').selectpicker();
+        $(document).on('focus',"#pickers", function(){
+            $(this).datetimepicker({format : 'DD/MM/YYYY HH:mm'});
+        });
+
     });
     $(".create-todo").on('click', function(event){
         event.preventDefault();

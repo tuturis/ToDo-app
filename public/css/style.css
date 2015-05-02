@@ -116,7 +116,9 @@ button {
   background: #ececec;
   border-radius: 0;
 }
-
+.bootstrap-select.priority {
+  width: 50px !important;
+} 
 .label-default.priority.priority-1 {
   background-color: #fceabb;
 }
