@@ -33,6 +33,9 @@ h1 {
 li {
   list-style: none;
 }
+.row {
+  margin: 0;
+}
 .create-todo {
   width: 100%;
   height: 100%;
@@ -114,6 +117,33 @@ button {
   border-radius: 0;
 }
 
+.label-default.priority.priority-1 {
+  background-color: #fceabb;
+}
+.label-default.priority.priority-2 {
+  background-color: #D3ED8C
+}
+.label-default.priority.priority-3 {
+  background-color: #abf05d;
+}
+.label-default.priority.priority-4 {
+  background-color: #5EF298;
+}
+.label-default.priority.priority-5 {
+  background-color: #0cf5d6;
+}
+.label-default.priority.priority-6 {
+  background-color: #12A4E3;
+}
+.label-default.priority.priority-7 {
+  background-color: #184ef0;
+}
+.label-default.priority.priority-8 {
+  background-color: #7F3A8B;
+}
+.label-default.priority.priority-9 {
+  background-color: #e62727;
+}
 
 /*!
  * Datepicker for Bootstrap
@@ -572,6 +602,11 @@ button {
   outline: none !important;
 }
 .bootstrap-select.btn-group .btn .filter-option {
+  color: black;
+
+  padding-right: 14px;
+  margin-left: -10px;
+  margin-top: 2px; 
   display: inline-block;
   overflow: hidden;
   width: 100%;

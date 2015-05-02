@@ -1,7 +1,6 @@
 <center><h1>Todo List</h1></center>
 <div class="content">
- <div class="header">
-      <form class="" action="">  
+ <div class="header"> 
         <div class="row">
           <div class="input-group">   
           <input type="text" class="todo-input" placeholder="Add todo here!"/>            
@@ -12,10 +11,11 @@
         </div>
         <div class="row">
           <div class='input-group date' id='dtp'>
-              <input type='text' class="due" placeholder="Due.." />
+              <input type='text' class="due" placeholder="Due.." >
               <span class="input-group-addon">
                   <span class="glyphicon glyphicon-calendar"></span>
               </span>
+            </input>
               <span>Priority:</span>
               <select class="priority selectpicker">
                 <option>1</option>
@@ -29,21 +29,28 @@
                 <option>9</option>
               </select> 
         </div>         
-      </form> 
- </div>          
+      </div>         
+ </div>
+
  <div class="todos">
     <?php foreach($todos as $todo):?>
     <div class="row todoItem <?php if ($todo->getCompleted() == 1) {  echo 'done';  } ?>">
        <span  id="todo-<?php echo $todo->getId() ?>" class="todo" contenteditable="true"><?php echo $todo->getTodo()?></span>
-       <span class="deadline pull-right"><?php echo $todo->getDeadline()?></span>
-       <span class="priority pull-right"><?php echo $todo->getPriority()?></span>
-        <button  id="remove-<?php echo $todo->getId(); ?>"class="delete-todo">
+        <div class="row">
+        <button  id="remove-<?php echo $todo->getId(); ?>" class="delete-todo">
           <span class="entypo-cancel"></span>
         </button>
+       <?php if ($todo->getDeadline() !== "0000-00-00 00:00:00" ) { ?>
+         <span class="deadline label label-default pull-right"><?php echo substr($todo->getDeadline(), 0, -3); ?></span>
+       <?php } ?> 
+      
+       <span class="label label-default priority priority-<?php echo $todo->getPriority()?> pull-right">Priority: <?php echo $todo->getPriority()?></span>       
         <button >
           <span class="entypo-check"></span>
         </button>
+        </div>
     </div>
+
     <?php endforeach; ?>
 </div>
 <div class="clear-both"></div> 
