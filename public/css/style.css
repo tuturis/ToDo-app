@@ -73,6 +73,9 @@ li {
 .done {
   text-decoration:line-through;
 }
+.deadline-error {
+  display: none
+}
 
 input, textarea {
   padding-left: 35px;

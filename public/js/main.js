@@ -105,6 +105,7 @@ function bindEvents() {
         deadline = $todo.text(),
         update_id = update_id.replace("deadline-","");
         if (moment(deadline).isValid()) {
+        $todo.next('.deadline-error').hide();
         $.post("todos/update", {id: update_id, deadline: deadline},
             function(data){
             if(data.response == false){
@@ -112,7 +113,7 @@ function bindEvents() {
             }
         }, 'json');
         } else {
-           
+           $todo.next('.deadline-error').show();
             console.log("invalid time")
         }
     });

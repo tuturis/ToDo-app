@@ -11,9 +11,10 @@ class TodosController extends AbstractActionController {
 	public function indexAction() {
 		return new ViewModel(array(
 			'todos' => $this->getTodosTable()->fetchAll(),
+            'PriorityTodos' => $this->getTodosTable()->fetchByPriority(),
 			));
 	}
-
+    /* use to get json (for angular) */
     public function getAllAction() {
     $request = $this->getRequest();
     if ($request->isGet()) {
