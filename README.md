@@ -1,8 +1,8 @@
 Todo applikacija su varototojais (naudojant zf2 skeleton)
 
 ### instaliacija/paleidimas
-Naudojant composer ir git
-1.
+1. Naudojant composer ir git
+
 ```
 git clone https://github.com/chillerfx/aviasg-todo/  aviasg-todo 
 && cd aviasg-todo
