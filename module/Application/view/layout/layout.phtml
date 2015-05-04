@@ -43,13 +43,21 @@
                 </div>
                 <div class="collapse navbar-collapse">
                     <?php
+                   if(!$this->zfcUserIdentity()): ?>   
+                    <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="<?php  echo $this->url('zfcuser/login') ?>"><?php  echo $this->translate('Register/Login') ?></a>
+                        </li>
+                    </ul>
+                    <?php else:  
                     echo $this->navigation('navigation')
                                 ->menu()
                                 ->setMinDepth(0)
                                 ->setMaxDepth(0)
                                 ->setUlClass('nav navbar-nav');
-                    ?>
-                    <?php /*
+                    
+                    endif
+                     /*
                     <!-- <ul class="nav navbar-nav">
                         <li class="active"><a href="<?php // echo $this->url('home') ?>"><?php // echo $this->translate('Home') ?></a></li>
                     </ul> -->

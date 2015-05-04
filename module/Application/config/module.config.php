@@ -12,8 +12,8 @@ return array(
     'navigation' => array(
         'default' => array(
             array(
-                'label' => 'Home',
-                'route' => 'home'
+                'label' => 'User',
+                'route' => 'zfcuser/login'
                 ),
             array(
                 'label' => 'Todos',
@@ -111,6 +111,7 @@ return array(
         ),
         'template_path_stack' => array(
             __DIR__ . '/../view',
+            'zfc-user/login' => __DIR__ . '/../view/login.phtml',
         ),
         'strategies' => array(
             'ViewJsonStrategy',

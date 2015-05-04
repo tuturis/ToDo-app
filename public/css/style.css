@@ -15,13 +15,18 @@ body {
   margin: 0;
   padding: 0;
   border: 0;
-  background: #bdc3c7; 
+  background: url(../img/symphony.png)
 }
 body {  
-    padding-top: 70px;    
+    padding-top: 50px;    
     }
 @media screen and (max-width: 768px) {
-    body { padding-top: 0px; }
+    body { padding-top: 20px; }
+}
+@media (min-width: 992px) {
+.container {
+  width: 100%;
+  }
 }
 
 h1 {
@@ -32,6 +37,9 @@ h1 {
 }
 li {
   list-style: none;
+}
+.container {
+  margin: 0 auto;
 }
 .row {
   margin: 0;
@@ -149,6 +157,176 @@ button {
 }
 .label-default.priority.priority-9 {
   background-color: #e62727;
+}
+
+#login .container {
+  margin:0;
+  padding: 1px 0;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  color: #fff;
+  font-family: "Comfortaa", "Helvetica", sans-serif
+}
+
+#login .login {
+  max-width: 280px;
+  min-height: 500px;
+  margin: 30px auto;
+  background-color: rgba(10,10,10,.68);
+}
+
+#login .login-icon-field {
+  height: 250px;
+  width: 100%;
+  /*background-color: red;*/
+}
+
+#login .login-icon {
+  margin: 50px 65px;
+}
+
+#login .login-form {
+  padding: 8px 20px 20px;
+  height: 120px;
+  width: 100%;
+  /*background-color: green;*/
+}
+
+#login .username-row {
+  position: relative;
+  height: 40px;
+  /*background-color: pink;*/
+  border-bottom: 1px solid;
+  margin-bottom: 10px;
+}
+
+#login .password-row {
+  position: relative;
+  height: 40px;
+ /* background-color: grey;*/
+  border-bottom: 1px solid;
+}
+
+#login .password-icon,
+#login .user-icon {
+  margin: 5px;
+}
+
+#login .password-icon .key-path,
+#login .user-icon .user-path{
+  fill: rgba(10,10,10,0);
+  stroke: #fff;
+  stroke-width: 3.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  -webkit-animation: dash 3s .3s linear forwards;
+  animation: dash 3s .3s linear forwards;
+}
+
+#login  .user-icon .user-path {
+  -webkit-animation: dash 3s .8s linear forwards;
+  animation: dash 3s .8s linear forwards;
+}
+
+#login input {
+  width: 240px;
+  height: 28px;
+  margin: 0px 0;
+  background: transparent;
+  border: none;
+}
+
+#login input:focus,
+#login button:focus {
+  outline: none;
+}
+
+#login input::-webkit-input-placeholder {
+  color: rgba(255,255,255,.4);
+}
+
+#login input::-moz-placeholder {
+  color: rgba(255,255,255,.4);
+}
+
+#login .call-to-action {
+  margin: 22px 0;
+  height: 130px;
+  width: 100%;
+  /*background-color: blue;*/
+}
+#login h1 {
+    left: 77px;
+  color: #7f8c8d;
+  font-family: 'Bad Script', cursive;
+  margin-bottom: 0px;
+  position: relative;
+  top: 10px;
+}
+#login button {
+  color: #fff;
+  display: block;
+  width: 240px;
+  height: 40px;
+  padding: 0;
+  margin: 10px 20px 10px;
+  font-weight: 700;
+  background-color: #22c08a;
+  border: none;
+  border-radius: 20px;
+  transition: background-color .10s ease-in-out;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+}
+
+#login button:hover {
+  background-color: #26d69a;
+}
+
+#login button:active {
+  background-color: #1eaa7a;
+}
+
+#login p {
+  display: inline-block;
+  width: 200px;
+  margin: 0 40px;
+  font-size: .8rem;
+  color: rgba(255,255,255,.4);
+  /*background-color: yellow;*/
+}
+
+#login p a {
+  color: #fff;
+}
+
+#login label,
+#login p a:hover {
+  -webkit-cursor: pointer;
+  cursor: pointer;
+}
+.navbar-inverse {
+    background: rgba(0,0,0,0.5);
+}
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus{
+  background: rgba(0,0,0,0.5);
+}
+@-webkit-keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 /*!
