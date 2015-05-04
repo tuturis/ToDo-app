@@ -171,7 +171,6 @@ button {
 
 #login .login {
   max-width: 280px;
-  min-height: 500px;
   margin: 30px auto;
   background-color: rgba(10,10,10,.68);
 }
@@ -195,15 +194,17 @@ button {
 
 #login .username-row {
   position: relative;
-  height: 40px;
+  height: 55px;
   /*background-color: pink;*/
   border-bottom: 1px solid;
   margin-bottom: 10px;
+  margin: 10px;
 }
 
 #login .password-row {
+  margin: 10px;
   position: relative;
-  height: 40px;
+  height: 55px;
  /* background-color: grey;*/
   border-bottom: 1px solid;
 }
