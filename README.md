@@ -1,7 +1,7 @@
 Todo applikacija su varototojais (naudojant zf2 skeleton)
 
 ### instaliacija/paleidimas
-1. Naudojant composer ir git
+ Naudojant composer ir git
 
 ```
 git clone https://github.com/chillerfx/aviasg-todo/  aviasg-todo 
@@ -10,12 +10,12 @@ git clone https://github.com/chillerfx/aviasg-todo/  aviasg-todo
 
 ```
 
-2. Importuoti lenteles su duomenim(mysql)
+ Importuoti lenteles su duomenim(mysql)
 ```
 cd aviasg-todo && mysql -u username -p password < db.sql
 ```
 
-3.sukurti  config/autoload/local.php su connection stringais
+ Sukurti  config/autoload/local.php su connection stringais
 ```
 <?php
 return array(
