@@ -16,21 +16,21 @@ class IndexController extends AbstractActionController
 {
     public function indexAction()
     {	
-        return new ViewModel(array(
+        return new ViewModel(/*array(
         	'users' => $this->getUserTable()->fetchAll(),
-        	));
+        	)*/);
     }
-    public function getUsersAction()
-    {   
-        return new JsonModel(array(
-            'users' => $this->getUserTable()->fetchAll(),
-            ));
-    }
-	public function getUserTable() {
-		if (!$this->_todosTable) {
-     	   $sm = $this->getServiceLocator();
-       	 $this->_todosTable = $sm->get('Application\Model\UserTable');
-    	}
-    	return $this->_todosTable;
-    }
+ //    public function getUsersAction()
+ //    {   
+ //        return new JsonModel(array(
+ //            'users' => $this->getUserTable()->fetchAll(),
+ //            ));
+ //    }
+	// public function getUserTable() {
+	// 	if (!$this->_UserTable) {
+ //     	   $sm = $this->getServiceLocator();
+ //       	 $this->_todosTable = $sm->get('Application\Model\UserTable');
+ //    	}
+ //    	return $this->_todosTable;
+  //  }
 }
