@@ -187,14 +187,13 @@ button {
 
 #login .login-form {
   padding: 8px 20px 20px;
-  height: 120px;
+
   width: 100%;
   /*background-color: green;*/
 }
 
 #login .username-row {
   position: relative;
-  height: 55px;
   /*background-color: pink;*/
   border-bottom: 1px solid;
   margin-bottom: 10px;
@@ -234,6 +233,7 @@ button {
 }
 
 #login input {
+  padding-left: 0;
   width: 220px;
   height: 28px;
   margin: 0px 0;
