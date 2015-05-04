@@ -9,10 +9,12 @@ git clone https://github.com/chillerfx/aviasg-todo/  aviasg-todo
 && php compser.phar update
 
 ```
+
 2. Importuoti lenteles su duomenim(mysql)
 ```
 cd aviasg-todo && mysql -u username -p password < db.sql
 ```
+
 3.sukurti  config/autoload/local.php su connection stringais
 ```
 <?php
