@@ -1,15 +1,11 @@
 <?php 
 namespace Application\Model\Entity;
 
-use ZfcUser\Entity\User;
-class MyUser extends User {
 
-	protected $_id;
+class Users  {
 
-	protected $_users;
-
-
-
+	protected $_user_id;
+	protected $_username;
 
 	public function __construct(array $options= null)
 	{
@@ -47,22 +43,22 @@ class MyUser extends User {
 		return $this;
 	}
 
-	public function getId()
+	public function getUser_id()
 	{
 		return $this->_id;
 	}
-	public function setId($id) {
-        $this->_id = $id;
+	public function setUser_id($user_id) {
+        $this->_user_id = $user_id;
         return $this;
     }
 
-	public function getUsers()
+	public function getUsername()
 	{
-		return $this->_Users;
+		return $this->_username;
 	}
 	
-	public function setUsers($users) {
-		$this->_users = $users;
+	public function setUsername($username) {
+		$this->_username = $username;
 		return $this;
 	}
 }	

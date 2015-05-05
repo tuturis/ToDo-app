@@ -27,7 +27,7 @@ return array(
 );
 ```
 
-
+Test admin - admin/admin123 
 
 
 Užduotis:

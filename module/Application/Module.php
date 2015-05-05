@@ -11,9 +11,10 @@ namespace Application;
 
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
+use Application\Model\UsersTable;
 
 class Module
-{
+{   
     public function onBootstrap(MvcEvent $e)
     {
         $eventManager        = $e->getApplication()->getEventManager();
@@ -21,18 +22,35 @@ class Module
         $moduleRouteListener->attach($eventManager);
     }
 
+    public function getAutoloaderConfig()
+    {
+        return array(
+         'Zend\Loader\StandardAutoloader' => array(
+             'namespaces' => array(
+                 
+                 __NAMESPACE__ => __DIR__ . '/src/' . __NAMESPACE__,
+                 
+                 'ApplicationController' => __DIR__ . '/src/Application',
+                )
+            )
+        );
+    }
+
     public function getConfig()
     {
         return include __DIR__ . '/config/module.config.php';
     }
 
-    public function getAutoloaderConfig()
+  
+    public function getServiceConfig()
     {
         return array(
-            'Zend\Loader\StandardAutoloader' => array(
-                'namespaces' => array(
-                    __NAMESPACE__ => __DIR__ . '/src/' . __NAMESPACE__,
-                ),
+            'factories' => array(
+                'Application\Model\UsersTable' => function($sm) {
+                    $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
+                    $table = new UsersTable($dbAdapter);
+                    return $table;
+                },
             ),
         );
     }

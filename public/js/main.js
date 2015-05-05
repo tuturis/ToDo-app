@@ -1,8 +1,14 @@
 $(document).ready(function(){
     // bind event handlers when the page loads.
     bindEvents();
+    getUsers();
 });
-
+function getUsers() {
+    $.post("application", null , function(data) {
+        console.log(data);
+        $('.users-panel').html($('.users', data));
+    });
+}
 function bindEvents() {
     $(function () {
         $('#dtp').datetimepicker({format : 'DD/MM/YYYY HH:mm'});

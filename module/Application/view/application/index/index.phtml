@@ -1,9 +1,14 @@
-<?php if(!$this->zfcUserIdentity()): ?>
-    <!-- display the login form -->
-    <?php echo $this->zfcUserLoginWidget(array('redirect'=>'application')); ?>
+<?php if($this->zfcUserIdentity()->getState() == 1): ?>
+    
+  <?php  ?>
+  <div class="users">
+  	<?php foreach ($users as $user): ?>
+  	<div class="row">
+  		<?php  echo $user->getUsername(); ?>
+  	</div>
+  	<?php endforeach ?>
+  </div>
 <?php else: ?>
     <!-- display the 'display name' of the user -->
-    <?php echo $this->zfcUserIdentity()->getDisplayname();
-          echo $this->zfcUserIdentity()->getEmail();
-           echo $this->zfcUserIdentity()->getState(); ?>
+    <?php echo "not authorized"; ?>
 <?php endif?>
