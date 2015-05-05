@@ -3,9 +3,9 @@
 	 echo $this->zfcUserLoginWidget(array('redirect'=>'application'));
   else:
  if($this->zfcUserIdentity()->getState() == 1): ?>
-    
-  <?php  ?>
+  
   <div class="users">
+  	<h2>Registered Users</h2>
   	<?php foreach ($users as $user): ?>
   	<div class="row">
   		<?php  echo $user->getUsername(); ?>
