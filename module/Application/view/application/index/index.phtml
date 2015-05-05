@@ -1,4 +1,8 @@
-<?php if($this->zfcUserIdentity()->getState() == 1): ?>
+
+<?php if(!$this->zfcUserIdentity()):
+	 echo $this->zfcUserLoginWidget(array('redirect'=>'application'));
+  else:
+ if($this->zfcUserIdentity()->getState() == 1): ?>
     
   <?php  ?>
   <div class="users">
@@ -11,4 +15,5 @@
 <?php else: ?>
     <!-- display the 'display name' of the user -->
     <?php echo "not authorized"; ?>
+<?php endif?>
 <?php endif?>
