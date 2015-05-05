@@ -4,6 +4,7 @@ namespace Application\Model;
 use Zend\Db\Adapter\Adapter;
 use Zend\Db\TableGateway\AbstractTableGateway;
 use Zend\Db\Sql\Select;
+use ZfcUser\Entity\User;
 
 class UserTable extends AbstractTableGateway {
 	protected $table = 'user';
@@ -17,9 +18,9 @@ class UserTable extends AbstractTableGateway {
     });
     $entities = array();
     foreach ($resultSet as $row) {
-        	$entity = new Entity\User();
+        	$entity = new Entity\MyUser();
             $entity ->setId($row->id)
-            		->setUser($row->username);
+            		->setUsers($row->username);
         $entities[] = $entity;
     	}
     return $entities;

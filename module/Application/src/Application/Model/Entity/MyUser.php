@@ -1,12 +1,12 @@
 <?php 
-namespace Todos\Model\Entity;
+namespace Application\Model\Entity;
 
-
-class User {
+use ZfcUser\Entity\User;
+class MyUser extends User {
 
 	protected $_id;
 
-	protected $_user;
+	protected $_users;
 
 
 
@@ -56,14 +56,14 @@ class User {
         return $this;
     }
 
-	public function getUser()
+	public function getUsers()
 	{
-		return $this->_todo;
+		return $this->_Users;
 	}
 	
-	public function setUser($todo) {
-		$this->_todo = $todo;
+	public function setUsers($users) {
+		$this->_users = $users;
 		return $this;
 	}
-	
+}	
 

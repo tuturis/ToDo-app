@@ -49,81 +49,28 @@
   <div role="tabpanel" class="tab-pane fade in active" id="todos">
    <div class="todos">
     <?php foreach($todos as $todo):?>
-    <div class="row todoItem <?php if ($todo->getCompleted() == 1) {  echo 'done';  } ?>">
-       <span  id="todo-<?php echo $todo->getId() ?>" class="todo" contenteditable="true"><?php echo $todo->getTodo()?></span>
-        <div class="row">
-        <button  id="remove-<?php echo $todo->getId(); ?>" class="delete-todo">
-          <span class="entypo-cancel"></span>
-        </button>
-       <?php if ($todo->getDeadline() !== "0000-00-00 00:00:00" ) { ?>
-         <span contenteditable="true" id="deadline-<?php echo $todo->getId() ?>" class="deadline  label label-default pull-right"><?php echo substr($todo->getDeadline(), 0, -3); ?></span>
-         <span class="pull-right label label-warning deadline-error">wrong format! (DD/MM/YYYY HH:mm)</span>
-       <?php } else { ?>
-          <span contenteditable="true" id="deadline-<?php echo $todo->getId() ?>" class="deadline  label label-default pull-right"><?php echo 'Deadline not set' ?></span>
-          <span class="pull-right label label-warning deadline-error">wrong format! (DD/MM/YYYY HH:mm)</span>
-       <?php } ?> 
-        
-       <span class="label label-default priority priority-<?php echo $todo->getPriority()?> pull-right">Priority: <?php echo $todo->getPriority()?></span>       
-        <button class="check-todo">
-          <span class="entypo-check"></span>
-        </button>
-      </div>
-    </div><?php endforeach; ?>    
+      <?php echo $this->partial('Todos/partials/todo-partial.phtml', array('todo' => $todo)); ?>
+    <?php endforeach; ?>    
   </div>
 </div>
 <div role="tabpanel" class="fade tab-pane" id="Todays">
+  <div class="todos">
 <?php foreach($todos as $todo): ?>
  <?php $todoDate  = new DateTime($todo->getDeadline());
        $today     = new DateTime();
  if ($todoDate->diff($today)->days === 0):  ?>
-   <div class="row todoItem <?php if ($todo->getCompleted() == 1) {  echo 'done';  } ?>">
-       <span  id="todo-<?php echo $todo->getId() ?>" class="todo" contenteditable="true"><?php echo $todo->getTodo()?></span>
-        <div class="row">
-        <button  id="remove-<?php echo $todo->getId(); ?>" class="delete-todo">
-          <span class="entypo-cancel"></span>
-        </button>
-       <?php if ($todo->getDeadline() !== "0000-00-00 00:00:00" ) { ?>
-         <span contenteditable="true" id="deadline-<?php echo $todo->getId() ?>" class="deadline  label label-default pull-right"><?php echo substr($todo->getDeadline(), 0, -3); ?></span>
-         <span class="pull-right label label-warning deadline-error">wrong format! (DD/MM/YYYY HH:mm)</span>
-       <?php } else { ?>
-          <span contenteditable="true" id="deadline-<?php echo $todo->getId() ?>" class="deadline  label label-default pull-right"><?php echo 'Deadline not set' ?></span>
-          <span class="pull-right label label-warning deadline-error">wrong format! (DD/MM/YYYY HH:mm)</span>
-       <?php } ?> 
-        
-       <span class="label label-default priority priority-<?php echo $todo->getPriority()?> pull-right">Priority: <?php echo $todo->getPriority()?></span>       
-        <button class="check-todo">
-          <span class="entypo-check"></span>
-        </button>
-      </div>
-    </div>
+   <?php echo $this->partial('Todos/partials/todo-partial.phtml', array('todo' => $todo)); ?>
    <?php endif; ?> 
   <?php endforeach; ?>
 </div>
+</div>
 
 <div role="tabpanel" class="fade tab-pane" id="Priority">
+  <div class="todos">
 <?php foreach($PriorityTodos as $todo): ?>
-   <div class="row todoItem <?php if ($todo->getCompleted() == 1) {  echo 'done';  } ?>">
-       <span  id="todo-<?php echo $todo->getId() ?>" class="todo" contenteditable="true"><?php echo $todo->getTodo()?></span>
-        <div class="row">
-        <button  id="remove-<?php echo $todo->getId(); ?>" class="delete-todo">
-          <span class="entypo-cancel"></span>
-        </button>
-       <?php if ($todo->getDeadline() !== "0000-00-00 00:00:00" ) { ?>
-         <span contenteditable="true" id="deadline-<?php echo $todo->getId() ?>" class="deadline  label label-default pull-right"><?php echo substr($todo->getDeadline(), 0, -3); ?></span>
-         <span class="pull-right label label-warning deadline-error">wrong format! (DD/MM/YYYY HH:mm)</span>
-       <?php } else { ?>
-          <span contenteditable="true" id="deadline-<?php echo $todo->getId() ?>" class="deadline  label label-default pull-right"><?php echo 'Deadline not set' ?></span>
-          <span class="pull-right label label-warning deadline-error">wrong format! (DD/MM/YYYY HH:mm)</span>
-       <?php } ?> 
-        
-       <span class="label label-default priority priority-<?php echo $todo->getPriority()?> pull-right">Priority: <?php echo $todo->getPriority()?></span>       
-        <button class="check-todo">
-          <span class="entypo-check"></span>
-        </button>
-      </div>
-    </div>
-  
+   <?php echo $this->partial('Todos/partials/todo-partial.phtml', array('todo' => $todo)); ?>  
   <?php endforeach; ?>
+</div>
 </div>
 
 </div>

@@ -184,7 +184,9 @@ button {
 #login .login-icon {
   margin: 50px 65px;
 }
-
+#login ul {
+  padding: 0;
+}
 #login .login-form {
   padding: 8px 20px 20px;
 
