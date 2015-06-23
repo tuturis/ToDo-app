@@ -1,4 +1,6 @@
-Todo applikacija su varototojais (naudojant zf2 skeleton)
+Todo applikacija su vartotojais (naudojant zf2 skeleton)
+## Atnaujinta, kad atitiktu profis.lt programuotojo testą
+*Pridetas puslapiavimas
 
 ### instaliacija/paleidimas
  Naudojant composer ir git
@@ -23,7 +25,6 @@ return array(
         'username' => 'username',
         'password' => 'password',          
     	),
-	),
 );
 ```
 
