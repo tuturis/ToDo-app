@@ -50,8 +50,10 @@
    <div class="todos">
     <?php foreach($todos as $todo):?>
       <?php echo $this->partial('Todos/partials/todo-partial.phtml', array('todo' => $todo)); ?>
-    <?php endforeach; ?>    
+    <?php endforeach; ?> 
+     
   </div>
+   <button class="center-block btn btn-defoult load-more">LOAD MORE TODOS</button> 
 </div>
 <div role="tabpanel" class="fade tab-pane" id="Todays">
   <div class="todos">
@@ -62,7 +64,9 @@
    <?php echo $this->partial('Todos/partials/todo-partial.phtml', array('todo' => $todo)); ?>
    <?php endif; ?> 
   <?php endforeach; ?>
+  
 </div>
+<button class="center-block btn btn-defoult load-more">LOAD MORE TODOS</button>
 </div>
 
 <div role="tabpanel" class="fade tab-pane" id="Priority">
@@ -70,7 +74,9 @@
 <?php foreach($PriorityTodos as $todo): ?>
    <?php echo $this->partial('Todos/partials/todo-partial.phtml', array('todo' => $todo)); ?>  
   <?php endforeach; ?>
+  
 </div>
+<button class="center-block btn btn-defoult load-more">LOAD MORE TODOS</button>
 </div>
 
 </div>

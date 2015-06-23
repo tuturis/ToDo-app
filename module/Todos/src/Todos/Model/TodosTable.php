@@ -39,6 +39,30 @@ class TodosTable extends AbstractTableGateway {
     	}
     return $entities;
     }
+
+    public function getTodos($count, $offset) {
+   if (!$count) $count = 1;
+   if (!$offset) $offset = 0;
+
+    $resultSet = $this->select(	function (Select $select) use ($count, $offset) {
+        $select->order('created ASC')
+        	   ->limit((int) $count)->offset((int) $offset);
+    });
+    $entities = array();
+    foreach ($resultSet as $row) {
+        	$entity = new Entity\Todo();
+            $entity ->setId($row->id)
+            		->setTodo($row->todo)
+					->setPriority($row->priority)
+					->setCreated($row->created)
+					->setDeadline($row->deadline)
+					->setCreatedBy($row->createdBy)
+					->setCompleted($row->completed);
+        $entities[] = $entity;
+    	}
+    return $entities;
+    }
+
     public function fetchByPriority() {
     $resultSet = $this->select(function (Select $select) {
         $select->order('priority desc');

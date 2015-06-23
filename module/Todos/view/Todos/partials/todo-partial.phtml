@@ -6,10 +6,10 @@
         </button>
        <?php if ($todo->getDeadline() !== "0000-00-00 00:00:00" ) { ?>
          <span contenteditable="true" id="deadline-<?php echo $todo->getId() ?>" class="deadline  label label-default pull-right"><?php echo substr($todo->getDeadline(), 0, -3); ?></span>
-         <span class="pull-right label label-warning deadline-error">wrong format! (DD/MM/YYYY HH:mm)</span>
+         <span class="pull-right label label-warning deadline-error">wrong format! (YYYY/MM/DD/ HH:mm)</span>
        <?php } else { ?>
           <span contenteditable="true" id="deadline-<?php echo $todo->getId() ?>" class="deadline  label label-default pull-right"><?php echo 'Deadline not set' ?></span>
-          <span class="pull-right label label-warning deadline-error">wrong format! (DD/MM/YYYY HH:mm)</span>
+          <span class="pull-right label label-warning deadline-error">wrong format! (YYYY/MM/DD/ HH:mm)</span>
        <?php } ?> 
         
        <span class="label label-default priority priority-<?php echo $todo->getPriority()?> pull-right">Priority: <?php echo $todo->getPriority()?></span>       
@@ -17,4 +17,4 @@
           <span class="entypo-check"></span>
         </button>
       </div>
-    </div>
+</div>

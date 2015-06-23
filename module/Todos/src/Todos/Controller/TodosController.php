@@ -9,11 +9,41 @@ class TodosController extends AbstractActionController {
 	protected $_todosTable;
 	
 	public function indexAction() {
+        $request = $this->getRequest();
+        /*pagination */
+        $limit = 1;
+        $offset= 0;
+        if ($request->isPost()) {
+            $post_data = $request->getPost();
+            $limit = $post_data['limit'];
+            $offset = $post_data['offset'];
+      
+        }
 		return new ViewModel(array(
-			'todos' => $this->getTodosTable()->fetchAll(),
+			'todos' => $this->getTodosTable()->getTodos($limit, $offset),
             'PriorityTodos' => $this->getTodosTable()->fetchByPriority(),
 			));
 	}
+
+    public function getTodosAction() {
+        $request = $this->getRequest();
+        $response = $this->getResponse();
+
+         if ($request->isPost()) {
+            $post_data = $request->getPost();
+            $limit = $post_data['limit'];
+            $offset = $post_data['offset'];
+            $response = array(                        
+                        'todos' => $this->getTodosTable()->getTodos($limit, $offset),
+                        'PriorityTodos' => $this->getTodosTable()->fetchByPriority(),
+                       );
+        }
+        return new ViewModel($response);
+        // return new ViewModel(array(
+        //     'todos' => $this->getTodosTable()->fetchAll(),
+        //     'PriorityTodos' => $this->getTodosTable()->fetchByPriority(),
+        //     ));
+    }
     /* use to get json (for angular) */
     public function getAllAction() {
     $request = $this->getRequest();
@@ -29,6 +59,8 @@ class TodosController extends AbstractActionController {
         }
     return $json; 
     }
+
+
 
 	public function addAction() {
 	$request = $this->getRequest();

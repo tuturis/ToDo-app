@@ -3,9 +3,18 @@ $(document).ready(function(){
     bindEvents();
     getUsers();
 });
+function loadTodos () {
+    var offset = 0,
+    limit = $('#todos .todoItem').length + 3 //quick hardcoded fix becouse of bug
+    $.post('todos', {limit: limit, offset: offset},
+        function(data) {
+            $('.content').empty().append($('.content',data));
+            //
+           bindEvents();
+        });
+}
 function getUsers() {
-    $.post("application", null , function(data) {
-        console.log(data);
+    $.post("application", null , function(data) {        
         $('.users-panel').html($('.users', data));
     });
 }
@@ -18,6 +27,10 @@ function bindEvents() {
         });
 
     });
+    $('.load-more').on('click', function(event){
+        event.preventDefault();
+        loadTodos();
+    })
     $(".create-todo").on('click', function(event){
         event.preventDefault();
          $todo    = $(this),
@@ -36,7 +49,6 @@ function bindEvents() {
                    $.post("todos", null,
                         function(data) {               
                         $('.content').html($('.content', data));
-                      
                         bindEvents();
                       });
                 } else {
