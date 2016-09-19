@@ -1,6 +1,6 @@
 #shell -> mysql -u root < db.sql
-CREATE DATABASE IF NOT EXISTS aviasg_todos DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
-USE aviasg_todos;
+CREATE DATABASE IF NOT EXISTS ToDos_app DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
+USE ToDos_app;
 CREATE TABLE IF NOT EXISTS `todos`
 (
 	`id` INT NOT NULL AUTO_INCREMENT ,

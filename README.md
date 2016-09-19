@@ -1,19 +1,19 @@
 Todo applikacija su vartotojais (naudojant zf2 skeleton)
 *Pridetas puslapiavimas
 
-## instaliacija/paleidimas
+## Setup:
  Naudojant composer ir git
 
 ```
-git clone https://github.com/chillerfx/aviasg-todo/aviasg-todo 
-&& cd aviasg-todo
+https://github.com/chillerfx/ToDo-app ToDo-app
+&& cd ToDo-app
 && php compser.phar update
 
 ```
 
  Importuoti lenteles su duomenim(mysql)
 ```
-cd aviasg-todo && mysql -u username -p password < db.sql
+cd ToDo-app && mysql -u username -p password < db.sql
 ```
 
  Sukurti  config/autoload/local.php su connection stringais
@@ -26,8 +26,9 @@ return array(
     	),
 );
 ```
+Run index.php inside public folder
 
-Test admin - admin/admin123 
+Test admin - admin@admin.com / admin123 
 
 #Techniniai reikalavimai:
 PHP 5.5+ compatible;

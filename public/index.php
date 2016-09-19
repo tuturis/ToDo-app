@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
 /**
  * This makes our life easier when dealing with paths. Everything is relative
  * to the application root now.

@@ -1,6 +1,6 @@
-@import url(http://weloveiconfonts.com/api/?family=entypo);
-@import url(http://fonts.googleapis.com/css?family=Bad+Script);
-@import url(http://fonts.googleapis.com/css?family=Nova+Mono);
+/*@import url(http://weloveiconfonts.com/api/?family=entypo);*/
+@import url(https://fonts.googleapis.com/css?family=Bad+Script);
+@import url(https://fonts.googleapis.com/css?family=Nova+Mono);
 
 [class*="entypo-"]:before {
   font-family: 'entypo', sans-serif;
@@ -81,8 +81,14 @@ li {
 .done {
   text-decoration:line-through;
 }
+check-todo span:after {
+  content: '☐';
+}
+.done .check-todo span:after {
+ content: '☑ '; !important
+}
 .deadline-error {
-  display: none
+  display: none;
 }
 
 input, textarea {

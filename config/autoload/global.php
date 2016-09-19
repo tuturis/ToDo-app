@@ -2,7 +2,7 @@
 return array(
     'db' => array(
         'driver'         => 'Pdo',
-        'dsn'            => 'mysql:dbname=aviasg_todos;host=localhost;charset=utf8',
+        'dsn'            => 'mysql:dbname=ToDos_app;host=localhost;charset=utf8',
         'driver_options' => array(
             PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES UTF8;'
         ),

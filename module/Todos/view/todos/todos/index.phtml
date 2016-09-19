@@ -4,9 +4,7 @@
         <div class="row">
           <div class="input-group">   
           <textarea  type="text" class="todo-input" placeholder="Add todo here!"></textarea >            
-          <span class="input-group-addon">
-            <button type="submit" class="glyphicon glyphicon-plus input-group-btn create-todo"></button>
-          </span>
+          
           </div>
         </div>
         <div class="row">
@@ -30,6 +28,9 @@
             <option>9</option>
           </select>
           </span> 
+          <span class="input-group-addon">
+            <button type="submit" class="glyphicon glyphicon-plus input-group-btn create-todo"></button>
+          </span>
       </div>         
  </div>
  <div role="tabpanel">
@@ -49,7 +50,7 @@
   <div role="tabpanel" class="tab-pane fade in active" id="todos">
    <div class="todos">
     <?php foreach($todos as $todo):?>
-      <?php echo $this->partial('Todos/partials/todo-partial.phtml', array('todo' => $todo)); ?>
+      <?php echo $this->partial('todos/partials/todo-partial.phtml', array('todo' => $todo)); ?>
     <?php endforeach; ?> 
      
   </div>
@@ -61,7 +62,7 @@
  <?php $todoDate  = new DateTime($todo->getDeadline());
        $today     = new DateTime();
  if ($todoDate->diff($today)->days === 0):  ?>
-   <?php echo $this->partial('Todos/partials/todo-partial.phtml', array('todo' => $todo)); ?>
+   <?php echo $this->partial('todos/partials/todo-partial.phtml', array('todo' => $todo)); ?>
    <?php endif; ?> 
   <?php endforeach; ?>
   
@@ -72,7 +73,7 @@
 <div role="tabpanel" class="fade tab-pane" id="Priority">
   <div class="todos">
 <?php foreach($PriorityTodos as $todo): ?>
-   <?php echo $this->partial('Todos/partials/todo-partial.phtml', array('todo' => $todo)); ?>  
+   <?php echo $this->partial('todos/partials/todo-partial.phtml', array('todo' => $todo)); ?>  
   <?php endforeach; ?>
   
 </div>
