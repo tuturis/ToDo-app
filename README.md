@@ -52,4 +52,4 @@ Bootstrap;
 -"Vėluojantys darbai"    - darbai kuriu nesugebėta atlikti iki šiandienos;[MISSING??]
 -"Svarbūs darbai"        - darbai su aukščiausiu prioritetu; [END]
 *Darbų sąrašo valdymui (naujo įrašo sukurimui, esamų redagavimui ir šalinimui) - AJAX. [DONE]
- 
+ *Todos can be edited (Todo itself and the deadline)
