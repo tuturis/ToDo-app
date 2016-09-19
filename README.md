@@ -1,5 +1,3 @@
-### #bugs
-*When started, displays whole root directory (cloud9 related?)
 
 ToDo list app with users (using zf2 skeleton)
 
