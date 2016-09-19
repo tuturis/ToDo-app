@@ -34,10 +34,11 @@ $form->setAttribute('method', 'post');
 
     <div class="call-to-action">
       <?php echo $this->formButton($form->get('submit')) ?>
-      <?php if ($this->enableRegistration) : ?>
-      <p>Don't have an account? <a href="<?php echo $this->url('zfcuser/register') . ($this->redirect ? '?redirect='.$this->redirect : '') ?>"><?php echo $this->translate('Sign up!'); ?></a></p>
-      <?php endif; ?>
+     
       <?php echo $this->form()->closeTag() ?>
+    
+      <p>Don't have an account? <a href="<?php echo $this->url('zfcuser/register') . ($this->redirect ? '?redirect='.$this->redirect : '') ?>"><?php echo $this->translate('Sign up!'); ?></a></p>
+     
     </div>
   </div>
 </div>
