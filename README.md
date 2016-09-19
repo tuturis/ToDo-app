@@ -1,8 +1,11 @@
-Todo applikacija su vartotojais (naudojant zf2 skeleton)
-*Pridetas puslapiavimas
+### #bugs
+*When started, displays whole root directory (cloud9 related?)
+
+ToDo list app with users (using zf2 skeleton)
+
 
 ## Setup:
- Naudojant composer ir git
+ Using composer and git
 
 ```
 https://github.com/chillerfx/ToDo-app ToDo-app
@@ -11,7 +14,7 @@ https://github.com/chillerfx/ToDo-app ToDo-app
 
 ```
 
- Importuoti lenteles su duomenim(mysql)
+Import data tables with test data(mysql)
 ```
 cd ToDo-app && mysql -u username -p password < db.sql
 ```
@@ -30,7 +33,7 @@ Run index.php inside public folder
 
 Test admin - admin@admin.com / admin123 
 
-#Techniniai reikalavimai:
+#Tech requirements:
 PHP 5.5+ compatible;
 Zend Framework 2.2+;
 Jquery 1.11+;
@@ -40,16 +43,16 @@ MySQL 5.1;
 Bootstrap;
 
 #Requariments:     
-*Privalo būti bent 2 vartotojų lygiai. Paprastas naudotojai ir administratorius. [DONE]
-*Administratorius gali redaguoti naudotojus ir uzduotis, paprasti naudotojai tik uzduotis [INCOMPLETE]
-*Navigacijos kurimui panaudoti  Zend navigation. [DONE]
-*Paprastiems naudotojams turi būti negalima patekti patekti į administratoriui skirtus puslapius ar vykdyti administratoriaus komandų. [INCOMPLETE]
+*2 user levels. User and admin. [DONE]
+*Admin can edit users and todos, users only todos [INCOMPLETE]
+*Zend navigation for navigation. [#DONE]
+*Users cannot access admin pages. [#INCOMPLETE]
 
 #Specification:
-*Darbų sąrašas turi būti paprastai valdomas, o informacija jame pateikta aiškiai ir gerai matoma. Turi būti galimybė įvesti darbo pavadinimą (title) [DONE] , datą iki kurios reikia įvykdyti užduotį (date) [DONE], užduoties prioritetą (priority)[DONE].
-*Kiti laukai neprivalomi, bet nedraudžiami. Reikalinga galimybė lengvai keisti dienas, taip pat turi būti keli darbų sąrašai:
--"Šiandienos darbai"     - darbai kuriuos reikia atlikti šiandien;[DONE ]
--"Vėluojantys darbai"    - darbai kuriu nesugebėta atlikti iki šiandienos;[MISSING??]
--"Svarbūs darbai"        - darbai su aukščiausiu prioritetu; [END]
-*Darbų sąrašo valdymui (naujo įrašo sukurimui, esamų redagavimui ir šalinimui) - AJAX. [DONE]
- *Todos can be edited (Todo itself and the deadline)
+*Todo list must be simple to use and data must be displayed #clearly. There's features with allow to enter the title of todo, the deadline and the priority of the todo.
+*There could be other fields. There must be an easy way to pick and edit the deadlines of the ToDo entry. There's also is several filters:
+-"Todays ToDos"
+-"Priority rank"
+*ToDo list managment implemented with AJAX (creating, updating, deleting).
+*Todos can be edited (Todo itself and the deadline)
+*Pagination
